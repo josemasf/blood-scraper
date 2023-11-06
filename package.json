@@ -1,0 +1,44 @@
+{
+  "name": "slidev-theme-slidev-aida-theme",
+  "version": "0.0.0",
+  "keywords": [
+    "slidev-theme",
+    "slidev"
+  ],
+  "engines": {
+    "node": ">=18.0.0",
+    "slidev": ">=0.19.3"
+  },
+  "scripts": {
+    "build": "slidev build slides.md",
+    "dev": "slidev slides.md --open",
+    "export": "slidev export slides.md",
+    "screenshot": "slidev export slides.md --format png"
+  },
+  "dependencies": {
+    "@slidev/types": "^0.43.2",
+    "@tabler/icons-vue": "^2.34.0",
+    "codemirror-theme-vars": "^0.1.2",
+    "prism-theme-vars": "^0.2.4",
+    "theme-vitesse": "^0.7.3"
+  },
+  "devDependencies": {
+    "@iconify-json/logos": "^1.1.37",
+    "@iconify-json/mdi": "^1.1.52",
+    "@iconify-json/twemoji": "^1.1.12",
+    "@slidev/cli": "^0.43.2",
+    "playwright-chromium": "1.38.1"
+  },
+  "//": "Learn more: https://sli.dev/themes/write-a-theme.html",
+  "slidev": {
+    "colorSchema": "both",
+    "highlighter": "all",
+    "lineNumbers": true,
+    "defaults": {
+      "fonts": {
+        "sans": "Poppins",
+        "mono": "Fira Code"
+      }
+    }
+  }
+}
