@@ -20,7 +20,8 @@
     "@tabler/icons-vue": "^2.34.0",
     "codemirror-theme-vars": "^0.1.2",
     "prism-theme-vars": "^0.2.4",
-    "theme-vitesse": "^0.7.3"
+    "theme-vitesse": "^0.7.3",
+    "vue-rewards": "^1.0.1"
   },
   "devDependencies": {
     "@iconify-json/logos": "^1.1.37",
