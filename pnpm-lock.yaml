@@ -20,6 +20,9 @@ dependencies:
   theme-vitesse:
     specifier: ^0.7.3
     version: 0.7.3
+  vue-rewards:
+    specifier: ^1.0.1
+    version: 1.0.1(vue@3.3.4)
 
 devDependencies:
   '@iconify-json/logos':
@@ -4664,6 +4667,14 @@ packages:
     dependencies:
       vue: 3.3.4
     dev: true
+
+  /vue-rewards@1.0.1(vue@3.3.4):
+    resolution: {integrity: sha1-rlpUSIixtTobzcMXuiVgaUD4c2s=}
+    peerDependencies:
+      vue: ^3.3.4
+    dependencies:
+      vue: 3.3.4
+    dev: false
 
   /vue-router@4.2.5(vue@3.3.4):
     resolution: {integrity: sha1-uePgjxvZ6jY/3RcwMmILxQzw6Yo=}

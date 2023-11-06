@@ -162,10 +162,60 @@ Cloudflare Workers se ejecuta en la red global de Cloudflare en cientos de ciuda
 <img src="/assets/cloudflare.png" class="object-cover h-60 m-auto" />
 
 ---
+
+# CRON Jobs
+
+```yml 
+name: Scrape donantescordoba Website
+
+on:
+  [...]
+  schedule:
+    - cron: "0 15,22 * * *"
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    steps:
+      [...]
+      - run: |
+          npm run scrape
+          git config user.name donantescordoba-bot
+          git diff --quiet && git diff --staged --quiet || git commit -am "[bot] update donantescordoba database"
+          git push origin master
+```
+
+<div class="mt-5 text-center">
+Ver en detalle en <a href="https://github.com/josemasf/blood-donate/blob/master/.github/workflows/scrape-donantescordoba.yml">GitHub</a>
+</div>
+
+---
+
+# API JSON en Grafana
+
+- Añadir registrar el plugin.
+- Añadir el data source.
+- En la pestaña path añadir el recurso a cosumir.
+- En fields indicar los campos a capturar.
+
+<iframe width="100%" height="50%" src="https://www.youtube.com/embed/B4Uj1n4Cr88?si=Rzatz66HVaxvrAxl&amp;start=314" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+---
 layout: center
 class: "text-center"
 ---
 
-# Learn More
+# Gracias
+<div class="flex justify-center items-center gap-10">
+  <div>
+    <logos-linkedin-icon /> AIDA Canarias
+  </div>
+  <div>
+    <logos-twitter /> @AIDASoftwate
+  </div>
+  <div>
+    <logos-chrome /> aidacanarias.com
+  </div>  
+</div>
 
-[Documentations](https://sli.dev) / [GitHub Repo](https://github.com/slidevjs/slidev)
+<Confetti class="top-50 relative" />
