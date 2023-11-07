@@ -1,25 +1,38 @@
 <script setup>
   import { useReward } from 'vue-rewards'
-  import { onMounted } from 'vue'
+  import { watch, ref } from 'vue'
+  const { reward: confettiReward, isAnimating: isConfettiAnimating } = useReward('some-id', 'confetti');
+  const { reward: emojiReward, isAnimating: isEmojiAnimating } = useReward('some-id', 'emoji');
 
-  const config = {
-    startVelocity:10,
-    spread:180,
-    elementCount:100
-    // etc...
-    // you can make this reactive instead etc.
+  const start = ref(false)
+
+  const thorwReward = () => {
+    start.value = !start.value;
+    
+    if(start.value){
+        confettiReward();    
+    }
   }
 
-  // has to be in onMounted, otherwise the element won't be found.
-  // This will trigger the animation immediately.
+  watch(isConfettiAnimating, (newVal) => {
+    if (newVal === false) {
+        if(start.value){
+            emojiReward();
+        }
+    }
+  });
   
-  // or you can trigger the animation onclick
-  // I have renamed reward to balloonsReward etc.
-
-  const { reward: balloonsReward, isAnimating: isBalloonsAnimating } = useReward('some-id', 'confetti');
+  watch(isEmojiAnimating, (newVal) => {
+    if (newVal === false) {
+        if(start.value){
+        confettiReward();
+        }
+    }
+  });
+  
 </script>
 
 <template>
-  <span id="some-id" @click="balloonsReward"> Let's celebrate! </span>
+  <span id="some-id" @click="thorwReward"> Let's celebrate! </span>
   
 </template>
