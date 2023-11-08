@@ -1,0 +1,10 @@
+{
+    "rewrites": [
+        {
+            "source": "/(.md)",
+            "destination": "/index.html"
+        }
+    ],
+    "buildCommand": "npm run build",
+    "outputDirectory": "dist"
+}
