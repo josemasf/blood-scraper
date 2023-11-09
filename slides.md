@@ -1,7 +1,6 @@
 ---
 theme: ./
 layout: intro
-img: lorem-pic.jpg
 transition: slide-left
 ---
 
@@ -38,7 +37,7 @@ layout: full
 ---
 # Arquitectura
 
-![Alt text](assets/architecture.png)
+![Alt text](/public/imgs/architecture.png)
 
 ---
 layout: center
